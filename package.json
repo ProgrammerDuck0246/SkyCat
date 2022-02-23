@@ -1,0 +1,41 @@
+{
+  "name": "skycat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "bot": "node main.js",
+    "watch": "nodemon",
+    "prettier": "prettier --write .",
+    "lint": "eslint .",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProgrammerDuck0246/SkyCat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProgrammerDuck0246/SkyCat/issues"
+  },
+  "homepage": "https://github.com/ProgrammerDuck0246/SkyCat#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord.js": "^13.6.0"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
