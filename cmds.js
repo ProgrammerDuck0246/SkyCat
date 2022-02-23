@@ -1,7 +1,6 @@
 const { REST } = require('@discordjs/rest')
 const { Routes } = require('discord-api-types/v9')
 const { token, clientId, guildId } = require('./config.json')
-const logger = require('./utils/logger')
 const fs = require('fs')
 
 const commands = []
@@ -18,14 +17,14 @@ const rest = new REST({ version: '9' }).setToken(token)
 
 ;(async () => {
   try {
-    logger.info('Started refreshing application (/) commands.')
+    console.log('Started refreshing application (/) commands.')
 
     await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
       body: commands
     })
 
-    logger.info('Successfully reloaded application (/) commands.')
+    console.log('Successfully reloaded application (/) commands.')
   } catch (error) {
-    logger.error(error)
+    console.error(error)
   }
 })()
