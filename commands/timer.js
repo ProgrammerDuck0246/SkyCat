@@ -1,23 +1,21 @@
 const { SlashCommandBuilder } = require('@discordjs/builders')
-const { MessageEmbed } = require('discord.js')
-
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('timer')
-    .setDescription('Provides you a timer to measure the time'),
+    .setDescription('Provides you a timer to measure the time')
+    .addNumberOption((option) =>
+      option
+        .setName('countdown')
+        .setDescription('Countdown timer you want to set to.')
+        .setRequired(true)
+    ),
   async execute(interaction) {
-    client.on('message', msg => {
-        if (msg == '1') {
-          let time = 5;
-          let interval = setInterval(() => {
-            msg.channel.send(duration --);
-            if (time < 1) {
-              clearInterval(interval);
-            }
-          }, 1000)
-      
-          
-        }
-      })
+    const timer = interaction.options.getNumber('countdown')
+    if (timer >= 1) {
+      timer--
+    }
+    if (timer == 0) {
+      interaction.reply('Timer ended!')
+    }
   }
 }
