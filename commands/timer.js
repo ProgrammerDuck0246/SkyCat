@@ -6,16 +6,17 @@ module.exports = {
     .addNumberOption((option) =>
       option
         .setName('countdown')
-        .setDescription('Countdown timer you want to set to.')
+        .setDescription('Countdown time you want to set to in seconds.')
         .setRequired(true)
     ),
   async execute(interaction) {
-    const timer = interaction.options.getNumber('countdown')
-    if (timer >= 1) {
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+    let timer = interaction.options.getNumber('countdown')
+    interaction.reply('Timer Set!')
+    while (timer !== 0) {
       timer--
+      await delay(1000)
     }
-    if (timer == 0) {
-      interaction.reply('Timer ended!')
-    }
+    interaction.channel.send(`${interaction.user} Timer ended!`)
   }
 }
