@@ -2,14 +2,14 @@
 
 ## **Update Log**
 
-### 21/2/2022
+### 25/2/2022
 - Fixed timer.js bugs
 - Added .estlintcache to .gitignore
 
-### 20/2/2022
+### 24/2/2022
 - Added .husky file
 
-### 19/2/2022
+### 23/2/2022
 - Created SkyCat Repository
 - Fixed Project Structure
 - Added Timer Feature (Testing Version)
